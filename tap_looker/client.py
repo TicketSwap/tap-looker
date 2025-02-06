@@ -54,8 +54,11 @@ class LookerStream(Stream):
 class LookerSystemActivityStream(LookerStream):
     def __init__(self, tap: Tap):
         super().__init__(tap)
-        self.replication_key = f"{self.name}.created_time"
-        self.primary_keys = [f"{self.name}.id"]
+        self.replication_key = f"{self.name}_created_time"
+        self.primary_keys = [f"{self.name}_id"]
+
+    def replace_prefix(self, field: str) -> str:
+        return field.replace(f"{self.name}_", f"{self.name}.")
 
     def get_records(
         self,
@@ -73,22 +76,31 @@ class LookerSystemActivityStream(LookerStream):
         Raises:
             NotImplementedError: If the implementation is TODO
         """
-        result_count: int = ROW_LIMIT - 1
+        result_count: int = ROW_LIMIT
         result_max_date: datetime = self.get_starting_timestamp(context)
-        while result_count != ROW_LIMIT:
+        fields = [
+            self.replace_prefix(field) for field in list(self.schema["properties"])
+        ]
+        while result_count == ROW_LIMIT:
             response = self.sdk.run_inline_query(
                 result_format="json",
                 body=models.WriteQuery(
                     model="system__activity",
                     view=self.name,
-                    fields=list(self.schema["properties"].keys()),
+                    fields=fields,
                     filters={
-                        self.replication_key: f"after {result_max_date.strftime('%Y-%m-%d %H:%M:%S')}",
+                        self.replace_prefix(
+                            self.replication_key
+                        ): f"after {result_max_date.strftime('%Y-%m-%d %H:%M:%S')}",
                     },
                 ),
                 limit=ROW_LIMIT,
             )
             response_results = json.loads(response)
+            response_results = [
+                {key.replace(".", "_"): value for key, value in response_result.items()}
+                for response_result in response_results
+            ]
             result_count = len(response_results)
             result_max_date = datetime.strptime(  # noqa: DTZ007
                 response_results[-1][self.replication_key],

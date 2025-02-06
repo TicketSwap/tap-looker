@@ -1,110 +1,110 @@
 {
   "type": "object",
   "properties": {
-    "query.id": {
+    "query_id": {
       "type": [
         "integer",
         "null"
       ]
     },
-    "query.created_time": {
+    "query_created_time": {
       "type": [
         "string",
         "null"
       ],
       "format": "date-time"
     },
-    "query.view": {
+    "query_view": {
       "type": [
         "string",
         "null"
       ]
     },
-    "query.count_of_dynamic_fields": {
+    "query_count_of_dynamic_fields": {
       "type": [
         "integer",
         "null"
       ]
     },
-    "query.dynamic_fields": {
+    "query_dynamic_fields": {
       "type": [
         "string",
         "null"
       ]
     },
-    "query.pivots": {
+    "query_pivots": {
       "type": [
         "string",
         "null"
       ]
     },
-    "query.hash": {
+    "query_hash": {
       "type": [
         "string",
         "null"
       ]
     },
-    "query.fields": {
+    "query_fields": {
       "type": [
         "string",
         "null"
       ]
     },
-    "query.filters": {
+    "query_filters": {
       "type": [
         "string",
         "null"
       ]
     },
-    "query.model": {
+    "query_model": {
       "type": [
         "string",
         "null"
       ]
     },
-    "query.link": {
+    "query_link": {
       "type": [
         "string",
         "null"
       ]
     },
-    "query.query_timezone": {
+    "query_query_timezone": {
       "type": [
         "string",
         "null"
       ]
     },
-    "query.slug": {
+    "query_slug": {
       "type": [
         "string",
         "null"
       ]
     },
-    "query.column_limit": {
+    "query_column_limit": {
       "type": [
         "string",
         "null"
       ]
     },
-    "query.row_total": {
+    "query_row_total": {
       "type": [
         "string",
         "null"
       ]
     },
-    "query.sorts": {
+    "query_sorts": {
       "type": [
         "string",
         "null"
       ]
     },
-    "query.total": {
+    "query_total": {
       "type": [
         "string",
         "null"
       ]
     },
-    "query.limit": {
+    "query_limit": {
       "type": [
         "integer",
         "null"

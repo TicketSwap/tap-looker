@@ -45,6 +45,10 @@ plugins:
       client_secret: $TAP_LOOKER_CLIENT_SECRET
       filter_models: [phoenix] 
       filter_explores: [tickets]
+    
+    select:
+      - "query.*"
+      - "history.*"
 
   loaders:
   - name: target-jsonl

@@ -1,154 +1,154 @@
 {
   "type": "object",
   "properties": {
-    "history.id": {
+    "history_id": {
       "type": [
         "integer",
         "null"
       ]
     },
-    "history.cache": {
+    "history_cache": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.cache_key": {
+    "history_cache_key": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.result_source": {
+    "history_result_source": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.completed_time": {
+    "history_completed_time": {
       "type": [
         "string",
         "null"
       ],
       "format": "date-time"
     },
-    "history.connection_id": {
+    "history_connection_id": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.connection_name": {
+    "history_connection_name": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.dialect": {
+    "history_dialect": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.created_time": {
+    "history_created_time": {
       "type": [
         "string",
         "null"
       ],
       "format": "date-time"
     },
-    "history.real_dash_id": {
+    "history_real_dash_id": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.dashboard_session": {
+    "history_dashboard_session": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.message": {
+    "history_message": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.most_recent_run_at_time": {
+    "history_most_recent_run_at_time": {
       "type": [
         "string",
         "null"
       ],
       "format": "date-time"
     },
-    "history.most_recent_length": {
+    "history_most_recent_length": {
       "type": [
         "number",
         "null"
       ]
     },
-    "history.is_single_query": {
+    "history_is_single_query": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.is_user_dashboard": {
+    "history_is_user_dashboard": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.rebuild_pdts": {
+    "history_rebuild_pdts": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.render_key": {
+    "history_render_key": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.result_format": {
+    "history_result_format": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.runtime": {
+    "history_runtime": {
       "type": [
         "number",
         "null"
       ]
     },
-    "history.slug": {
+    "history_slug": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.source": {
+    "history_source": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.status": {
+    "history_status": {
       "type": [
         "string",
         "null"
       ]
     },
-    "history.query_id": {
+    "history_query_id": {
       "type": [
         "integer",
         "null"
       ]
     },
-    "history.workspace_id": {
+    "history_workspace_id": {
       "type": [
         "string",
         "null"
