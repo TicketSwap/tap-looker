@@ -1,6 +1,12 @@
 {
   "type": "object",
   "properties": {
+    "explore_and_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "align": {
       "type": [
         "string",

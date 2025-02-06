@@ -139,6 +139,7 @@ explore_schema = PropertiesList(
 ).to_dict()
 
 field_schema = PropertiesList(
+    Property("explore_and_name", StringType),
     Property("align", StringType),
     Property("can_filter", BooleanType),
     Property("category", StringType),
