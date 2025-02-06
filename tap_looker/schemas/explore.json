@@ -1,0 +1,263 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "label": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "scopes": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "string"
+        ]
+      }
+    },
+    "can_total": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "can_develop": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "can_see_lookml": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "lookml_link": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "can_save": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "can_explain": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "can_pivot_in_db": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "can_subtotal": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "has_timezone_support": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "supports_cost_estimate": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "connection_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "null_sort_treatment": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "files": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "string"
+        ]
+      }
+    },
+    "source_file": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "project_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "model_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "view_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "hidden": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "sql_table_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "access_filter_fields": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "string"
+        ]
+      }
+    },
+    "access_filters": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    "aliases": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "value": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "always_filter": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    "conditionally_filter": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    "index_fields": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "string"
+        ]
+      }
+    },
+    "tags": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "string"
+        ]
+      }
+    },
+    "group_label": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "always_join": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "string"
+        ]
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

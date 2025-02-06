@@ -1,0 +1,159 @@
+{
+  "type": "object",
+  "properties": {
+    "history.id": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "history.cache": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.cache_key": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.result_source": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.completed_time": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "history.connection_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.connection_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.dialect": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.created_time": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "history.real_dash_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.dashboard_session": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.message": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.most_recent_run_at_time": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "history.most_recent_length": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "history.is_single_query": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.is_user_dashboard": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.rebuild_pdts": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.render_key": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.result_format": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.runtime": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "history.slug": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.source": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history.query_id": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "history.workspace_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

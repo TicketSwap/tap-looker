@@ -1,0 +1,268 @@
+{
+  "type": "object",
+  "properties": {
+    "align": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "can_filter": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "category": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "field_group_variant": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fiscal_month_offset": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "has_allowed_values": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "hidden": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "is_filter": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "is_fiscal": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "is_numeric": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "is_timeframe": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "can_time_filter": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "label": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "label_short": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lookml_link": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "measure": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "strict_value_format": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "parameter": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "primary_key": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "project_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "requires_refresh_on_sort": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "scope": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sortable": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "source_file": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_file_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sql": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "suggest_dimension": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "suggest_explore": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "suggestable": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "tags": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "string"
+        ]
+      }
+    },
+    "type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "user_attribute_filter_types": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "string"
+        ]
+      }
+    },
+    "view": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "view_label": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "dynamic": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "week_start_day": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "times_used": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "original_view": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "field_group_label": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "default_filter_value": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

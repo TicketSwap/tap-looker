@@ -1,0 +1,115 @@
+{
+  "type": "object",
+  "properties": {
+    "query.id": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "query.created_time": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "query.view": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "query.count_of_dynamic_fields": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "query.dynamic_fields": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "query.pivots": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "query.hash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "query.fields": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "query.filters": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "query.model": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "query.link": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "query.query_timezone": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "query.slug": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "query.column_limit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "query.row_total": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "query.sorts": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "query.total": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "query.limit": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,120 @@
+{
+  "type": "object",
+  "properties": {
+    "can": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "index": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "show": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "update_field_unlimited_db_connections": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "update": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "destroy": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "allowed_db_connection_names": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "string"
+        ]
+      }
+    },
+    "explores": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "label": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "hidden": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "group_label": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "has_content": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "label": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "project_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "unlimited_db_connections": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}
