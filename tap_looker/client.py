@@ -1,11 +1,12 @@
 """Custom client handling, including LookerStream base class."""
 
 from __future__ import annotations
-from enum import Enum
+
 import json
 import os
 import typing as t
 from datetime import datetime
+from enum import Enum
 from pathlib import Path
 
 import looker_sdk
@@ -23,7 +24,8 @@ SCHEMAS_DIR = Path(__file__).parent / "schemas"
 class LookerStream(Stream):
     """Stream class for Looker streams."""
 
-    def __init__(self, tap: Tap):
+    def __init__(self, tap: Tap) -> None:
+        """Initialize the stream object."""
         super().__init__(tap)
         os.environ["LOOKERSDK_BASE_URL"] = self.config.get("base_url")
         os.environ["LOOKERSDK_CLIENT_ID"] = self.config.get("client_id")
@@ -40,6 +42,7 @@ class LookerStream(Stream):
         return SCHEMAS_DIR / f"{self.name}.json"
 
     def convert_to_dict(self, obj: object) -> dict:
+        """Convert object to dictionary."""
         if isinstance(obj, Enum):
             return obj.value
         if isinstance(obj, list):
@@ -52,12 +55,15 @@ class LookerStream(Stream):
 
 
 class LookerSystemActivityStream(LookerStream):
-    def __init__(self, tap: Tap):
+    """Stream class for Looker System Activity streams."""
+    def __init__(self, tap: Tap) -> None:
+        """Initialize the stream object."""
         super().__init__(tap)
         self.replication_key = f"{self.name}_created_time"
         self.primary_keys = [f"{self.name}_id"]
 
     def replace_prefix(self, field: str) -> str:
+        """Replace the prefix of a field name."""
         return field.replace(f"{self.name}_", f"{self.name}.")
 
     def get_records(
