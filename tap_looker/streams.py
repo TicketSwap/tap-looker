@@ -1,7 +1,6 @@
 """Stream type classes for tap-looker."""
 
 from __future__ import annotations
-import json
 
 from typing import TYPE_CHECKING
 
@@ -34,7 +33,7 @@ class ModelStream(LookerStream):
         """Return a generator of record-type dictionary objects."""
         for model in self.sdk.all_lookml_models():
             if model.name in self.config.get("filter_models", [model.name]):
-                model_dict = self.convert_to_dict(model)
+                model_dict = dict(model.items())
                 yield model_dict
 
     def get_child_context(self, record: dict, context: Optional[dict]) -> dict:
@@ -44,7 +43,6 @@ class ModelStream(LookerStream):
             for explore in record.get("explores", [])
             if explore["name"] in self.config.get("filter_explores", [explore["name"]])
         ]
-        self.logger.info(record)
         return {
             "model_name": record["name"],
             "explores": explores,
@@ -65,7 +63,7 @@ class ExploreStream(LookerStream):
                 lookml_model_name=context["model_name"],
                 explore_name=explore_name,
             )
-            explore_dict = self.convert_to_dict(explore)
+            explore_dict = dict(explore.items())
             for key in ["sets", "fields", "joins", "supported_measure_types"]:
                 explore_dict.pop(key, None)
             yield explore_dict
@@ -85,8 +83,14 @@ class FieldStream(LookerStream):
                 lookml_model_name=context["model_name"],
                 explore_name=explore_name,
             )
-            fields = self.convert_to_dict(explore.fields)
-            for field_type in fields:
-                for item in fields[field_type]:
-                    item["explore_and_name"] = f"{explore_name}.{item['name']}"
-                    yield item
+            field_types = [
+                "dimensions",
+                "measures",
+                "filters",
+                "parameter",
+            ]
+            for field_type in field_types:
+                for item in explore.get("fields", {}).get(field_type, []):
+                    item_dict = dict(item.items())
+                    item_dict["explore_and_name"] = f"{explore_name}.{item_dict['name']}"
+                    yield item_dict

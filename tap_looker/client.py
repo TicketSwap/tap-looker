@@ -41,21 +41,10 @@ class LookerStream(Stream):
         """
         return SCHEMAS_DIR / f"{self.name}.json"
 
-    def convert_to_dict(self, obj: object) -> dict:
-        """Convert object to dictionary."""
-        if isinstance(obj, Enum):
-            return obj.value
-        if isinstance(obj, list):
-            return [self.convert_to_dict(item) for item in obj]
-        if isinstance(obj, dict):
-            return {key: self.convert_to_dict(value) for key, value in obj.items()}
-        if hasattr(obj, "__dict__"):
-            return self.convert_to_dict(obj.__dict__)
-        return obj
-
 
 class LookerSystemActivityStream(LookerStream):
     """Stream class for Looker System Activity streams."""
+
     def __init__(self, tap: Tap) -> None:
         """Initialize the stream object."""
         super().__init__(tap)
@@ -84,9 +73,7 @@ class LookerSystemActivityStream(LookerStream):
         """
         result_count: int = ROW_LIMIT
         result_max_date: datetime = self.get_starting_timestamp(context)
-        fields = [
-            self.replace_prefix(field) for field in list(self.schema["properties"])
-        ]
+        fields = [self.replace_prefix(field) for field in list(self.schema["properties"])]
         while result_count == ROW_LIMIT:
             response = self.sdk.run_inline_query(
                 result_format="json",
