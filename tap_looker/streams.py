@@ -44,7 +44,6 @@ class ModelStream(LookerStream):
             for explore in record.get("explores", [])
             if explore["name"] in self.config.get("filter_explores", [explore["name"]])
         ]
-        self.logger.info(record)
         return {
             "model_name": record["name"],
             "explores": explores,
@@ -65,9 +64,8 @@ class ExploreStream(LookerStream):
                 lookml_model_name=context["model_name"],
                 explore_name=explore_name,
             )
-            explore_dict = self.convert_to_dict(explore)
-            for key in ["sets", "fields", "joins", "supported_measure_types"]:
-                explore_dict.pop(key, None)
+            properties = self.schema.get("properties", {}).keys()
+            explore_dict = {key: self.convert_to_dict(value) for key, value in explore.items() if key in properties}
             yield explore_dict
 
 
@@ -85,8 +83,9 @@ class FieldStream(LookerStream):
                 lookml_model_name=context["model_name"],
                 explore_name=explore_name,
             )
-            fields = self.convert_to_dict(explore.fields)
-            for field_type in fields:
-                for item in fields[field_type]:
-                    item["explore_and_name"] = f"{explore_name}.{item['name']}"
-                    yield item
+            properties = self.schema.get("properties", {}).keys()
+            fields = [self.convert_to_dict(field) for field_group in explore.fields.values() for field in field_group]
+            for field in fields:
+                field_dict = {key: value for key, value in field.items() if key in properties}
+                field_dict["explore_and_name"] = f"{explore_name}.{field['name']}"
+                yield field_dict
