@@ -30,7 +30,6 @@ class LookerStream(Stream):
         os.environ["LOOKERSDK_BASE_URL"] = self.config.get("base_url")
         os.environ["LOOKERSDK_CLIENT_ID"] = self.config.get("client_id")
         os.environ["LOOKERSDK_CLIENT_SECRET"] = self.config.get("client_secret")
-        self.sdk = looker_sdk.init40()
 
     @property
     def schema_filepath(self) -> Path | None:
@@ -80,11 +79,12 @@ class LookerSystemActivityStream(LookerStream):
         Raises:
             NotImplementedError: If the implementation is TODO
         """
+        sdk = looker_sdk.init40()
         result_count: int = ROW_LIMIT
         result_max_date: datetime = self.get_starting_timestamp(context)
         fields = [self.replace_prefix(field) for field in list(self.schema["properties"])]
         while result_count == ROW_LIMIT:
-            response = self.sdk.run_inline_query(
+            response = sdk.run_inline_query(
                 result_format="json",
                 body=models.WriteQuery(
                     model="system__activity",
