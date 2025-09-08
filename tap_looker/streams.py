@@ -1,9 +1,10 @@
 """Stream type classes for tap-looker."""
 
 from __future__ import annotations
-import json
 
 from typing import TYPE_CHECKING
+
+import looker_sdk
 
 # JSON Schema typing helpers
 from tap_looker.client import LookerStream, LookerSystemActivityStream
@@ -32,7 +33,8 @@ class ModelStream(LookerStream):
 
     def get_records(self, context: Optional[Context]) -> Iterable[Record]:
         """Return a generator of record-type dictionary objects."""
-        for model in self.sdk.all_lookml_models():
+        sdk = looker_sdk.init40()
+        for model in sdk.all_lookml_models():
             if model.name in self.config.get("filter_models", [model.name]):
                 model_dict = self.convert_to_dict(model)
                 yield model_dict
@@ -59,8 +61,9 @@ class ExploreStream(LookerStream):
 
     def get_records(self, context: Optional[Context]) -> Iterable[Record]:
         """Return a generator of record-type dictionary objects."""
+        sdk = looker_sdk.init40()
         for explore_name in context["explores"]:
-            explore = self.sdk.lookml_model_explore(
+            explore = sdk.lookml_model_explore(
                 lookml_model_name=context["model_name"],
                 explore_name=explore_name,
             )
@@ -78,8 +81,9 @@ class FieldStream(LookerStream):
 
     def get_records(self, context: Optional[Context]) -> Iterable[Record]:
         """Return a generator of record-type dictionary objects."""
+        sdk = looker_sdk.init40()
         for explore_name in context["explores"]:
-            explore = self.sdk.lookml_model_explore(
+            explore = sdk.lookml_model_explore(
                 lookml_model_name=context["model_name"],
                 explore_name=explore_name,
             )
